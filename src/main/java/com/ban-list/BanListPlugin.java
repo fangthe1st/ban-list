@@ -1,4 +1,4 @@
-package net.runelite.client.plugins.banlist;
+package com.ban-list;
 
 import com.google.inject.Provides;
 import java.io.IOException;
