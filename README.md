@@ -1,4 +1,4 @@
-# ban-list
+# <img align="center" src="https://i.imgur.com/OdEuPwd.png" alt="Icon"> Ban list
 -------
 Checks if players are on manual or url ban list
 # Features
