@@ -140,7 +140,7 @@ public class BanListPlugin extends Plugin
 	/**
 	 * refresh list for url
 	 */
-	@Schedule(period = 1, unit = ChronoUnit.MINUTES)
+	@Schedule(period = 5, unit = ChronoUnit.MINUTES)
 	public void refreshList() {
 		UrlArrayList.clear();
 		fetchFromWebsites();
