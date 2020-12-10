@@ -1,4 +1,4 @@
-package com.ban-list;
+package com.banlist;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
