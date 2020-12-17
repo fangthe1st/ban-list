@@ -233,7 +233,7 @@ public class BanListPlugin extends Plugin
 	}
 
 	/**
-	 * Pulls data from wdr and runewatch to build a list of blacklisted usernames
+	 * Pulls data from Url to build a list of blacklisted usernames
 	 */
 	private void fetchFromWebsites()
 	{
