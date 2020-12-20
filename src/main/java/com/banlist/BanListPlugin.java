@@ -13,7 +13,7 @@ import net.runelite.api.GameState;
 import net.runelite.api.events.FriendsChatMemberJoined;
 import net.runelite.client.events.ConfigChanged;
 import net.runelite.api.events.WidgetHiddenChanged;
-import net.runelite.api.events.WidgetLoaded;
+import net.runelite.api.events.ScriptPostFired;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.callback.ClientThread;
@@ -100,11 +100,10 @@ public class BanListPlugin extends Plugin
 	 * Event to keep making sure player names are highlighted red in clan chat, since the red name goes away frequently
 	 */
 	@Subscribe
-	public void onWidgetHiddenChanged(WidgetHiddenChanged widgetHiddenChanged)
+	public void onScriptPostFired(ScriptPostFired scriptPostFired)
 	{
 		if (client.getGameState() != GameState.LOGGED_IN
 				|| client.getWidget(WidgetInfo.LOGIN_CLICK_TO_PLAY_SCREEN) != null
-				|| client.getViewportWidget() == null
 				|| client.getWidget(WidgetInfo.FRIENDS_CHAT) == null
 				|| !config.highlightInClan())
 		{
