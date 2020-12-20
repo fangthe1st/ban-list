@@ -12,7 +12,7 @@ import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.events.FriendsChatMemberJoined;
 import net.runelite.client.events.ConfigChanged;
-import net.runelite.api.events.WidgetHiddenChanged;
+import net.runelite.api.events.WidgetLoaded;
 import net.runelite.api.events.ScriptPostFired;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
