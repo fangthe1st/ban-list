@@ -8,7 +8,9 @@ Sync Url Banlist every 5 mins
 Notify user when a player on the banlist joins the cc
 
 Add warning to trade windows if user is on banlist
-
+# Manual
+-------
+manual list is made up names separated by comma's
 # Url
 -------
 Url is list of single name lines of rsn
