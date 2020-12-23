@@ -4,6 +4,7 @@ import com.google.inject.Provides;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import net.runelite.api.ScriptID;
 import javax.inject.Inject;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
@@ -100,24 +101,17 @@ public class BanListPlugin extends Plugin
 	 * Event to keep making sure player names are highlighted red in clan chat, since the red name goes away frequently
 	 */
 	@Subscribe
-	public void onScriptPostFired(ScriptPostFired scriptPostFired)
-	{
-		if (client.getGameState() != GameState.LOGGED_IN
-				|| client.getWidget(WidgetInfo.LOGIN_CLICK_TO_PLAY_SCREEN) != null
-				|| client.getWidget(WidgetInfo.FRIENDS_CHAT) == null
-				|| !config.highlightInClan())
-		{
-			return;
-		}
-
-		clientThread.invokeLater(() ->
-		{
-			if (!client.getWidget(WidgetInfo.FRIENDS_CHAT).isHidden())
-			{
-				highlightRedInCC();
-			}
-		});
-	}
+    public void onScriptPostFired(ScriptPostFired event)
+    {
+        if (event.getScriptId() == ScriptID.FRIENDS_CHAT_CHANNEL_REBUILD) {
+            clientThread.invokeLater(() ->
+            {
+                if (!client.getWidget(WidgetInfo.FRIENDS_CHAT).isHidden()) {
+                    highlightRedInCC();
+                }
+            });
+        }
+    }
 
 	@Subscribe
 	private void onFriendsChatMemberJoined(FriendsChatMemberJoined event)
